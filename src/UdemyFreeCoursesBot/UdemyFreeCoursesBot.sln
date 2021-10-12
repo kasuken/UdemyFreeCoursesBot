@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyFreeCoursesBot.Func", "UdemyFreeCoursesBot.Func\UdemyFreeCoursesBot.Func.csproj", "{AF98AD71-B436-43D2-9A75-7E400CA9932C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UdemyFreeCoursesBot.Models", "UdemyFreeCoursesBot.Models\UdemyFreeCoursesBot.Models.csproj", "{637E9CE6-7DF7-429E-B8C7-2B4250795BBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF98AD71-B436-43D2-9A75-7E400CA9932C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF98AD71-B436-43D2-9A75-7E400CA9932C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF98AD71-B436-43D2-9A75-7E400CA9932C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF98AD71-B436-43D2-9A75-7E400CA9932C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{637E9CE6-7DF7-429E-B8C7-2B4250795BBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{637E9CE6-7DF7-429E-B8C7-2B4250795BBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{637E9CE6-7DF7-429E-B8C7-2B4250795BBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{637E9CE6-7DF7-429E-B8C7-2B4250795BBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3104085D-1248-4854-8C98-0D863D66464A}
+	EndGlobalSection
+EndGlobal
