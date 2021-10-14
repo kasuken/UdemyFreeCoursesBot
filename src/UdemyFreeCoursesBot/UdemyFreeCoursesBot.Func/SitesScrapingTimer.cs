@@ -14,7 +14,7 @@ namespace UdemyFreeCoursesBot.Func
         public async static void Run([TimerTrigger("0 0 * * * *")] MyInfo myTimer, FunctionContext context)
         {
             var logger = context.GetLogger("SitesScrapingTimer");
-            logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
+            logger.LogInformation($"SitesScrapingTimer executed at: {DateTime.Now}");
 
             Courses = new List<UdemyCourse>();
 
