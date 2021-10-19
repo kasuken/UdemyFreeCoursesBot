@@ -62,15 +62,21 @@ namespace UdemyFreeCoursesBot.Func
 
                     tableClient.AddEntity(entity);
 
-                    var botClient = new TelegramBotClient("");
+                    try
+                    {
+                        var botClient = new TelegramBotClient(Environment.GetEnvironmentVariable("BotToken"));
 
-                    await botClient.SendTextMessageAsync(
-                        chatId: "@udemycouponsfreecourses",
-                        text: @$"*{item.Title}* {item.Description} {item.Url}",
-                        parseMode: ParseMode.Markdown
-                    );
+                        await botClient.SendTextMessageAsync(
+                            chatId: "@udemycouponsfreecourses",
+                            text: @$"*{item.Title}* {item.Description} {item.Url}",
+                            parseMode: ParseMode.Markdown
+                        );
+                    }
+                    catch (Exception ex)
+                    {
 
-                    //await botClient.SendPhotoAsync()
+                        throw;
+                    }
                 }
             }
 

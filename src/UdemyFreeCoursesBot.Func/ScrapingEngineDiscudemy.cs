@@ -39,6 +39,10 @@ namespace UdemyFreeCoursesBot.Func
                     var courseLink = card.GetElementsByClassName("card-header");
                     var courseTitle = courseLink[0]?.TextContent;
                     var courseDescription = card.GetElementsByClassName("description")[0]?.TextContent;
+
+                    courseDescription = courseDescription.Replace("\n                ", "\n");
+                    courseDescription = courseDescription.Replace("\n\t\t\t\t\n", "\n");
+                    
                     var courseBanner = card.GetElementsByClassName("ui full-width image")[0]?.GetAttribute("src");
                     var courseUrl = courseLink[0].GetAttribute("href");
 
