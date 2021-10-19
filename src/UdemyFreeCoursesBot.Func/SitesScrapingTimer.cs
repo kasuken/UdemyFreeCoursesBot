@@ -1,7 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Azure.Data.Tables;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
+using Telegram.Bot;
+using Telegram.Bot.Types.Enums;
 using UdemyFreeCoursesBot.Models;
 
 namespace UdemyFreeCoursesBot.Func
@@ -19,9 +23,12 @@ namespace UdemyFreeCoursesBot.Func
             Courses = new List<UdemyCourse>();
 
             var engineDiscudemy = new ScrapingEngineDiscudemy();
+            var notificationService = new NotificationsService();
 
             Courses = new List<UdemyCourse>();
             Courses.AddRange(await engineDiscudemy.Run());
+
+            await notificationService.SendNotifications(Courses);
 
             logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
         }

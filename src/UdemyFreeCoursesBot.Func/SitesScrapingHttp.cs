@@ -35,50 +35,15 @@ namespace UdemyFreeCoursesBot.Func
             logger.LogInformation("SitesScrapingHttp processed a request.");
 
             var engineDiscudemy = new ScrapingEngineDiscudemy();
+            var notificationService = new NotificationsService();
 
             Courses = new List<UdemyCourse>();
             Courses.AddRange(await engineDiscudemy.Run());
 
+            await notificationService.SendNotifications(Courses);
+
             var response = req.CreateResponse(HttpStatusCode.OK);
-
             await response.WriteAsJsonAsync(Courses);
-
-            string tableName = "UdemyCourses";
-
-            var tableClient = new TableClient(
-                Environment.GetEnvironmentVariable("TableConnection"),
-                tableName);
-
-            foreach (var item in Courses)
-            {
-                var queryResultsFilter = tableClient.Query<TableEntity>(filter: $"Url eq '{item.Url}'");
-
-                if (queryResultsFilter.Count() == 0)
-                {
-                    var entity = new TableEntity("courses", Guid.NewGuid().ToString())
-                    {
-                        { "Url", item.Url }
-                    };
-
-                    tableClient.AddEntity(entity);
-
-                    try
-                    {
-                        var botClient = new TelegramBotClient(Environment.GetEnvironmentVariable("BotToken"));
-
-                        await botClient.SendTextMessageAsync(
-                            chatId: "@udemycouponsfreecourses",
-                            text: @$"*{item.Title}* {item.Description} {item.Url}",
-                            parseMode: ParseMode.Markdown
-                        );
-                    }
-                    catch (Exception ex)
-                    {
-
-                        throw;
-                    }
-                }
-            }
 
             return response;
         }
