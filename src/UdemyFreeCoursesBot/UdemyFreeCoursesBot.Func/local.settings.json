@@ -1,9 +1,0 @@
-{
-    "IsEncrypted": false,
-  "Values": {
-    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
-    "BotToken": "2064753872:AAGxIZjXg3nrhVbuRIlgpKrDvQ6i9xyvIQ0",
-    "TableConnection": "DefaultEndpointsProtocol=https;AccountName=udemyfreecoursesbot;AccountKey=Tm9/a5kUjL0R4ROBkPvLA67cl1K56HEOi4bHr0aKkGkdo/6DPyN/XkTn0KgHBcnxDes44W4AqZPapUSXhV77Fw==;EndpointSuffix=core.windows.net"
-  }
-}
