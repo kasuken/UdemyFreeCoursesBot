@@ -32,7 +32,7 @@ Contributions are always welcome!
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/kasuken/UdemyFreeCoursesBot/blob/main/LICENSE)
 
 
 ## Authors
