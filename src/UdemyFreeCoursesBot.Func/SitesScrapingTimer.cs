@@ -23,7 +23,7 @@ namespace UdemyFreeCoursesBot.Func
             Courses = new List<UdemyCourse>();
 
             var engineDiscudemy = new ScrapingEngineDiscudemy();
-            var notificationService = new NotificationsService();
+            var notificationService = new NotificationsServiceFauna();
 
             Courses = new List<UdemyCourse>();
             Courses.AddRange(await engineDiscudemy.Run());
