@@ -72,6 +72,8 @@ namespace UdemyFreeCoursesBot.Func
 
                     courseUrl = a.GetAttribute("href");
 
+                    courseUrl = courseUrl.Split("url=")[1];
+
                     courses.Add(new UdemyCourse() { Title = courseTitle, Description = courseDescription, BannerUrl = courseBanner, Url = courseUrl });
                 }
                 catch (System.Exception ex)
